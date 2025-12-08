@@ -1,9 +1,10 @@
-import express from 'express';
-import { config } from 'dotenv';
-import { connectDB, disconnectDB } from './config/db.js';
+import express from "express";
+import { config } from "dotenv";
+import { connectDB, disconnectDB } from "./config/db.js";
 
 // Import Routes
-import movieRoutes from './routes/movieRoutes.js';
+import movieRoutes from "./routes/movieRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 config();
 connectDB();
