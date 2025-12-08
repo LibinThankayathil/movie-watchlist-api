@@ -22,21 +22,53 @@ const register = async (req, res) => {
   // Create User
   const user = await prisma.user.create({
     data: {
-        name,
-        email,
-        password: hashedPassword,
+      name,
+      email,
+      password: hashedPassword,
     },
   });
   res.status(201).json({
     status: "success",
     data: {
-        user:{
-            id: user.id,
-            name: name,
-            email: email
-        }
-    }
-  })
+      user: {
+        id: user.id,
+        name: name,
+        email: email,
+      },
+    },
+  });
 };
 
-export { register };
+const login = async (req, res) => {
+  const { email, password } = req.body;
+
+  //check user email exists in the table
+  const user = await prisma.user.findUnique({
+    where: { email: email },
+  });
+
+  if (!user) {
+    return res
+      .status(401)
+      .json({ error: "Invalid email or password" });
+  }
+
+  //verify the password
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+
+  if (!isPasswordValid) {
+    return res.status(401).json({ error: "Invalid email or password" })
+  }
+
+  res.status(201).json({
+    status: "success",
+    data: {
+      user: {
+        id: user.id,
+        email: email,
+      },
+    },
+  });
+};
+
+export { register, login };
