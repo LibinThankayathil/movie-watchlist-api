@@ -1,12 +1,14 @@
 import express from 'express';
 import { addToWatchlist, removeFromWatchlist, updateWatchlistItem } from '../controllers/watchlistController.js';
 import { authMiddleware } from '../middlewares/authMiddleware.js';
+import { validateRequest } from '../middlewares/validateRequest.js';
+import { addToWatchlistSchema } from '../validators/watchlistValidators.js';
 
 const router = express.Router()
 
 router.use(authMiddleware)
 
-router.post("/", addToWatchlist);
+router.post("/", validateRequest(addToWatchlistSchema), addToWatchlist);
 
 router.put("/:id", updateWatchlistItem);
 
