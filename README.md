@@ -1,20 +1,22 @@
-# Movie Watchlist API
+# 🎬 Movie Watchlist API
 
 A backend API for managing a personalized movie watchlist. Built with Node.js, Express, and PostgreSQL, this application allows users to register, browse seeded movies, and manage their own watchlist with tracking statuses (Planned, Watching, Completed, Dropped), ratings, and notes.
 
-## Features
+> **Live Demo**: [https://movie-watchlist-api-p5qa.onrender.com](https://movie-watchlist-api-p5qa.onrender.com) 🚀
 
--   **User Authentication**: Secure registration and login using JWT (JSON Web Tokens).
--   **Movie Management**: Browse a pre-seeded database of popular movies.
--   **Watchlist**:
+## ✨ Features
+
+-   **🔐 User Authentication**: Secure registration and login using JWT (JSON Web Tokens).
+-   **🎬 Movie Management**: Browse a pre-seeded database of popular movies.
+-   **📝 Watchlist**:
     -   Add movies to your personal watchlist.
     -   Update status (Planned, Watching, Completed, Dropped).
     -   Add personal ratings and notes.
     -   Remove movies from the watchlist.
--   **Data Validation**: Robust input validation using Zod.
--   **Security**: Password hashing with Bcryptjs.
+-   **🛡️ Data Validation**: Robust input validation using Zod.
+-   **🔒 Security**: Password hashing with Bcryptjs.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 -   **Runtime**: [Node.js](https://nodejs.org/)
 -   **Framework**: [Express.js](https://expressjs.com/)
@@ -23,7 +25,7 @@ A backend API for managing a personalized movie watchlist. Built with Node.js, E
 -   **Authentication**: [check JWT](https://jwt.io/) & [Bcryptjs](https://www.npmjs.com/package/bcryptjs)
 -   **Validation**: [Zod](https://zod.dev/)
 
-## Prerequisites
+## ⚙️ Prerequisites
 
 Before running this project, ensure you have the following installed:
 
@@ -31,7 +33,7 @@ Before running this project, ensure you have the following installed:
 -   [npm](https://www.npmjs.com/) (Node Package Manager)
 -   [PostgreSQL](https://www.postgresql.org/) (Local instance or cloud provider like Neon/Supabase)
 
-## Getting Started
+## 🚀 Getting Started
 
 Follow these steps to set up the project locally.
 
@@ -87,7 +89,7 @@ npm run dev
 
 The server should now be running at `http://localhost:5001`.
 
-## API Endpoints
+## 📡 API Endpoints
 
 ### Authentication
 
@@ -112,7 +114,7 @@ The server should now be running at `http://localhost:5001`.
 Movies are currently populated directly into the database via the seed script.
 The seeded user ID is `a9baa5b0-a02a-4f9f-b857-d1eab1bd4345`.
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 src/
@@ -128,6 +130,6 @@ prisma/
 └── seed.js         # Database seeding script
 ```
 
-## License
+## 📄 License
 
 This project is licensed under the ISC License.
